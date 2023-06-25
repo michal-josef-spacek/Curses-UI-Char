@@ -18,6 +18,7 @@ meta-spec:
 name: Curses-UI-Char
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
