@@ -91,7 +91,11 @@ EXAMPLE1
      $cui->mainloop;
 
      # Output like:
-     # TODO
+     #   ██
+     # ██  ██
+     # ██████
+     # ██  ██
+     # ██  ██
 
 EXAMPLE2
      use strict;
@@ -108,10 +112,10 @@ EXAMPLE2
      my $win = $cui->add('window_id', 'Window');
 
      # Add number.
-     my $num = $win->add(
-             undef, 'Curses::UI::Number',
+     my $char = $win->add(
+             undef, 'Curses::UI::Char',
              '-border' => 1,
-             '-num' => 0,
+             '-char' => 'A',
      );
  
      # Binding for quit.
@@ -121,12 +125,13 @@ EXAMPLE2
      $cui->set_timer(
              'timer',
              sub {
-                     my $act = $num->num;
+                     my $act = ord($char->char) - 65;
                      $act += 1;
-                     if ($act > 9) {
+                     if ($act > 25) {
                              $act = 0;
                      }
-                     $num->num($act);
+                     $char->char(chr($act + 65));
+
                      return;
              },
              1,
@@ -139,7 +144,7 @@ EXAMPLE2
      # ┌──────┐
      # │██████│
      # │██  ██│
-     # │██████│
+     # │██  ██│
      # │██  ██│
      # │██████│
      # └──────┘
