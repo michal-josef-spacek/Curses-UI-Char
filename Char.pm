@@ -302,6 +302,10 @@ L<Unicode::UTF8>.
 
 =over
 
+=item L<Tickit::Widget::Char>
+
+Tickit Widget for character.
+
 =item L<Task::Curses::UI>
 
 Install the Curses::UI modules.

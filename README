@@ -154,6 +154,9 @@ DEPENDENCIES
     Unicode::UTF8.
 
 SEE ALSO
+    Tickit::Widget::Char
+        Tickit Widget for character.
+
     Task::Curses::UI
         Install the Curses::UI modules.
 
